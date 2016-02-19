@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+
+<link media="screen" rel="stylesheet" type="text/css" href="libs/simple-form-validation.css" />
+<script src="libs/jquery-1.9.0.js"></script>
+<script src="libs/simple-form-validation.js"></script>
+<script>
+$(function() {
+
+
+
+$('#submit').click(function() {
+var form = $('#form1').simpleForm({all_errors : true});
+
+if(form){
+alert('success');
+}
+
+return false;
+});
+
+
+$('#submit2').click(function() {
+var form = $('#form2').simpleForm();
+
+if(form){
+alert('success');
+}
+
+return false;
+});
+});
+</script>
+<style>
+
+</style>
+</head>
+<body>
+<h1>Show all errors on the field</h1>
+<form id="form1">
+<input type="text" id="field1" name="field1" placeholder="required" simpleForm-required /> <br><br><br>
+<input type="text" id="field2" name="field2" placeholder="number only" simpleForm-number /> <br><br><br>
+<input type="text" id="field3" name="field3" placeholder="min length 3" simpleForm-minlength="3" /> <br><br><br>
+<input type="text" id="field4" name="field4" placeholder="max length 10" simpleForm-maxlength="10" /> <br><br><br>
+<input type="text" id="field4" name="field4" placeholder="email address" simpleForm-email /> <br><br><br>
+<input type="text" id="field4" style="width:400px" name="field4" placeholder="required, number only, min length 3, max length 10" simpleForm-required simpleForm-number simpleForm-minlength="3"  simpleForm-maxlength="10" /> <br><br><br>
+
+<input type="submit" name="submit" id="submit" value="submit" />
+</form>
+
+<hr />
+
+<h1>Show error one at a time</h1>
+<form id="form2">
+<input type="text" id="field1" name="field1" placeholder="required" simpleForm-required /> <br><br><br>
+<input type="text" id="field2" name="field2" placeholder="number only" simpleForm-number /> <br><br><br>
+<input type="text" id="field3" name="field3" placeholder="min length 3" simpleForm-minlength="3" /> <br><br><br>
+<input type="text" id="field4" name="field4" placeholder="max length 10" simpleForm-maxlength="10" /> <br><br><br>
+<input type="text" id="field4" name="field4" placeholder="email address" simpleForm-email /> <br><br><br>
+<input type="text" id="field4" style="width:400px" name="field4" placeholder="required, number only, min length 3, max length 10" simpleForm-required simpleForm-number simpleForm-minlength="3"  simpleForm-maxlength="10" /> <br><br><br>
+
+<input type="submit" name="submit" id="submit2" value="submit" />
+</form>
+</body>
+</html>
